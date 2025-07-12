@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="home.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><button id="logoutButton">logout</button></li>
+            </ul>
+        </nav>
+        <article id="root">
+            <h1 id="username"></h1>
+            <h1 id="useremail"></h1>
+            <article id="frm">
+                <form id="subfrm" action="#">
+                    <fieldset>
+                        <legend>Submit Project</legend>
+                        <label>
+                            Course Name:
+                            <select id="course-name">
+                                <option>Select the Course</option>
+                            </select>
+                        </label>
+                        <label>Name: <input type="text" id="student-name"></label>
+                        <label>Roll No: <input type="text" id="roll-number"></label>
+                        <label>Project Title: <input type="text" id="project-title"></label>
+                        <label>Project Description: <textarea rows="15" id="project-description"></textarea></label>
+                        <label>Project Url: <input type="text" id="project-url"></label>
+                        <input type="submit" value="submit">
+                    </fieldset>
+                </form>
+            </article>
+            <article id="res">
+                <h2>You have already submitted project!</h2>
+                <button id="resub">Submit another project</button>
+            </article>
+        </article>
+        <footer>
+            Copyleft &copy; 2025 Sowmiyan S
+        </footer>
+        <script type="module" crossorigin="anonymous" src="home.js"></script>
+    </body>
+</html>

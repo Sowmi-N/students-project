@@ -1,0 +1,170 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+nav {
+    height: 70px;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+nav > ul > li {
+    list-style: none;
+}
+
+nav > ul > li > button {
+    padding: 5px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+    background: beige;
+    /* filter: drop-shadow(red 2px 2px 4px); */
+    box-shadow: 1px 1px 5px red;
+}
+
+nav > ul > li > button:hover {
+    color: white;
+    background: red;
+}
+
+footer {
+    height: 100px;
+    background-color: lightgrey;
+    text-align: center;
+    padding: 15px;
+    margin: 20px 0px 0px 0px;
+}
+
+article {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 95vw;
+}
+
+fieldset {
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(2px 2px 10px lightgrey);
+    border: 1px solid lightgrey;
+    padding: 10px 9px 10px 0px;
+    background: white;
+    width: 95%;
+}
+
+form {
+    margin: 0px;
+    width: 80%;
+}
+
+@media (max-width:450px) {
+    form {
+        width: 95%;
+    }
+}
+
+legend {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    filter: drop-shadow(2px 2px 10px lightgrey);
+}
+
+label {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+input[type="text"] {
+    padding: 6px;
+    margin: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-family: sans-serif;
+    width: 95%;
+}
+textarea {
+    padding: 6px;
+    margin: 5px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-family: sans-serif;
+    width: 95%;
+}
+
+input[type="submit"] {
+    padding: 5px;
+    margin: 5px;
+    font-family: sans-serif;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 5px;
+    background-color: white;
+    width: 95%;
+}
+
+select {
+    padding: 5px;
+    margin: 5px;
+    font-family: sans-serif;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: 100%;
+    background-color: white;
+}
+
+@media (min-width: 450px) {
+    input[type="text"] {
+        width: 90%;
+    }
+    textarea {
+        width: 90%;
+    }
+    input[type="submit"] {
+        width: 90%;
+    }
+    select {
+        width: 93%;
+    }
+}
+
+input[type="submit"]:hover {
+    background-color: blue;
+    color: white;
+}
+
+article > button {
+    padding: 5px;
+    margin: 0px;
+    font-family: sans-serif;
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+    border-radius: 10px;
+}
+article > button:hover {
+    color: white;
+    background-color: blue;
+    border: 1px solid white;
+}
