@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+        <link rel="stylesheet" href="admin.css">
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+            </ul>
+        </nav>
+        <article id="root">
+            <form>
+                <label>
+                    Course:
+                    <select id="course-name">
+                    </select>
+                </label>
+                <label>
+                    Start Date:
+                    <input type="date" id="start-date">
+                </label>
+                <label>
+                    End Date:
+                    <input type="date" id="end-date">
+                </label>
+                <input type="submit" value="filter">
+            </form>
+            <article>
+                <table id="students-table">
+                </table>
+            </article>
+        </article>
+        <footer>
+            Copyleft &copy; 2025 Sowmiyan S
+        </footer>
+        <script type="module" crossorigin="anonymous" src="admin.js"></script>
+    </body>
+</html>
+

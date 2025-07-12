@@ -1,0 +1,18 @@
+/* Admin css */
+
+td, tr, table {
+    border: 1px solid lightgrey;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    text-align: center;
+}
+td#pd {
+    width: 50%;
+}
+td#pd>textarea {
+    width: 98%;
+}
