@@ -60,9 +60,19 @@ let studentTableE = document.getElementById("students-table");
 function setEndDate() {
     console.log(this.value);
     console.log(new Date(this.value));
+    filterStudents();
 }
 startDateE.addEventListener("input", setEndDate);
 
+let frm = document.getElementById("frm");
+frm.addEventListener("submit", () => {
+    this.preventDefaults();
+    filterStudents();
+});
+function sub(e) {
+    e.preventDefaults();
+    filterStudents();
+}
 // fetch the course name to fill course name select.
 let fireStore = getFirestore();
 async function getCourseData() {
