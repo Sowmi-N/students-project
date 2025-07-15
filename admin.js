@@ -65,11 +65,12 @@ function setEndDate() {
 startDateE.addEventListener("input", setEndDate);
 
 let frm = document.getElementById("frm");
-frm.addEventListener("submit", () => {
-    this.preventDefaults();
+frm.addEventListener("submit", function(event) {
+    event.preventDefault();
     filterStudents();
 });
 function sub(e) {
+    console.log(e);
     e.preventDefaults();
     filterStudents();
 }
@@ -100,6 +101,34 @@ endDate.setDate(today.getDate() + 1);
 startDateE.value = startDate.toISOString().split("T")[0];
 endDateE.value = endDate.toISOString().split("T")[0];
 
+// create the first row
+let fr = document.createElement("tr");
+
+let snoTD = document.createElement("td")            
+let nameTD = document.createElement("td")           
+let rollNoTD = document.createElement("td")         
+let projectTitleTD = document.createElement("td")   
+let projectUrlTD = document.createElement("td")     
+let projectDescTD = document.createElement("td")    
+let submitTimeTD = document.createElement("td")     
+
+snoTD.appendChild(document.createTextNode("Sno."));
+nameTD.appendChild(document.createTextNode("Name"));
+rollNoTD.appendChild(document.createTextNode("Roll No."));
+projectTitleTD.appendChild(document.createTextNode("Project Title"));
+projectUrlTD.appendChild(document.createTextNode("Project Url"));
+projectDescTD.appendChild(document.createTextNode("Project Description"));
+submitTimeTD.appendChild(document.createTextNode("Submitted On"));
+
+fr.appendChild(snoTD);
+fr.appendChild(nameTD);
+fr.appendChild(rollNoTD);
+fr.appendChild(projectTitleTD);
+fr.appendChild(projectUrlTD);
+fr.appendChild(projectDescTD);
+fr.appendChild(submitTimeTD);
+studentTableE.appendChild(fr);
+
 // Fetch the students details and show them in the table
 async function filterStudents() {
     courseName = courseNameE.options[courseNameE.selectedIndex].value;
@@ -107,33 +136,6 @@ async function filterStudents() {
     endDate = endDateE.value;
     let fireStoreStartDate = Timestamp.fromDate(new Date(startDate));
     let fireStoreEndDate = Timestamp.fromDate(new Date(endDate));
-    // create the first row
-    let fr = document.createElement("tr");
-
-    let snoTD = document.createElement("td")            
-    let nameTD = document.createElement("td")           
-    let rollNoTD = document.createElement("td")         
-    let projectTitleTD = document.createElement("td")   
-    let projectUrlTD = document.createElement("td")     
-    let projectDescTD = document.createElement("td")    
-    let submitTimeTD = document.createElement("td")     
-
-    snoTD.appendChild(document.createTextNode("Sno."));
-    nameTD.appendChild(document.createTextNode("Name"));
-    rollNoTD.appendChild(document.createTextNode("Roll No."));
-    projectTitleTD.appendChild(document.createTextNode("Project Title"));
-    projectUrlTD.appendChild(document.createTextNode("Project Url"));
-    projectDescTD.appendChild(document.createTextNode("Project Description"));
-    submitTimeTD.appendChild(document.createTextNode("Submitted On"));
-
-    fr.appendChild(snoTD);
-    fr.appendChild(nameTD);
-    fr.appendChild(rollNoTD);
-    fr.appendChild(projectTitleTD);
-    fr.appendChild(projectUrlTD);
-    fr.appendChild(projectDescTD);
-    fr.appendChild(submitTimeTD);
-    studentTableE.appendChild(fr);
     const q = query(collection(fireStore, "student-projects"), where("course-name", "==", courseName), where("timestamp", ">=", fireStoreStartDate), where("timestamp", "<=", fireStoreEndDate));
     const querySnapshot = await getDocs(q);
     let sno = 1;
